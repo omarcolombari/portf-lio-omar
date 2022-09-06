@@ -1,3 +1,5 @@
+import Aos from "aos";
+import "aos/dist/aos.css";
 // Styles
 import { Container } from "@/styles/Global";
 import { Text } from "@/styles/Text";
@@ -24,20 +26,48 @@ import {
   ProjectAreaWrapperColumns,
 } from "./style";
 
-
 export const Home = (): JSX.Element => {
+  Aos.init({
+    offset: 120,
+    delay: 0,
+    duration: 400,
+    easing: "ease",
+    once: false,
+    mirror: false,
+    anchorPlacement: "top-bottom",
+  });
   return (
     <main>
       <Header>
         <Container>
           <HeaderContent>
-            <Text as="h1" type="heading1" color="grey5">
+            <Text
+              as="h1"
+              type="heading1"
+              color="grey5"
+              data-aos="fade-right"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+            >
               Criando experiências por meio da tecnologia{" "}
             </Text>
-            <Text type="body1" color="grey6">
-              Sou estudante de programação na Kenzie Academy Brasil, participei
-              de diversos projetos resolvendo problemas de alto nível e
-              desenvolvendo habilidades
+            <Text
+              type="body1"
+              color="grey6"
+              data-aos="fade-left"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+            >
+              Sempre possui afinidade e contato com a tecnologia, desde cedo
+              explorando e conhecendo tudo que um computador pode oferecer e,
+              com isso, veio a vontade de entrar cada vez mais fundo neste
+              universo, consequentemente conheci a programação. A capacidade de
+              se comunicar com o computador, conseguir criar seus próprios
+              projetos e quem sabe construir algo que possa não só mudar o mundo
+              da tecnologia, mas ele como um todo, tudo isso me fascinou e me
+              prendeu.
             </Text>
             <HeaderButtonsArea>
               <Button as="a" href="#projetos">
@@ -51,9 +81,19 @@ export const Home = (): JSX.Element => {
         </Container>
       </Header>
       <StackSection id="tecnologias">
-        <Container>
-          <Text as="h4" type="heading3" color="grey1">
-            Ferramentas que domino
+        <Container
+          data-aos="fade-right"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+        >
+          <Text
+            style={{ textAlign: "center" }}
+            as="h4"
+            type="heading1"
+            color="grey1"
+          >
+            Tecnologias que domino
           </Text>
           <StackCards>
             {stackData.map((stack, index) => (
@@ -84,15 +124,8 @@ export const Home = (): JSX.Element => {
               </Button>
             </ProjectsAreaSocialMediaMessage>
             <ProjectsAreaContent>
-              <Text type="body1" color="grey2" css={{ marginBottom: "$2" }}>
-                Projetos
-              </Text>
               <Text as="h3" type="heading2" color="grey1">
-                Originalidade e{" "}
-                <Text as="span" color="brand1" type="heading2">
-                  dedicação
-                </Text>{" "}
-                em cada detalhe
+                Projetos 
               </Text>
               <Project />
             </ProjectsAreaContent>

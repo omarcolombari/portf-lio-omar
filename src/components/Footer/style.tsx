@@ -3,7 +3,7 @@ import { Button } from '@/styles/Buttons';
 import { Container } from '@/styles/Global'
 
 export const Footer = styled("footer", {
-    backgroundColor: "$brand1",
+    backgroundColor: "$grey1",
     padding: "2rem 0 3rem 0",
     [`& ${Container}`]:{
         display: "flex",

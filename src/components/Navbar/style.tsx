@@ -8,7 +8,7 @@ export const Navbar = styled("nav", {
   position: "fixed",
   inset: 0,
   bottom: "auto",
-  padding: "1rem 0",
+  padding: "0.60rem 0",
   width: "100%",
   zIndex: "99999",
 
@@ -16,7 +16,7 @@ export const Navbar = styled("nav", {
     display: "flex",
     justifyContent: "space-between",
     "@mobile": {
-        flexDirection: "column"
+      flexDirection: "column",
     },
   },
 });
@@ -32,7 +32,7 @@ export const LogoTipoImage = styled("img", {
   "@mobile": {
     width: "2.25rem",
     height: "2.25rem",
-  }
+  },
 });
 
 export const LogoTipoText = styled("span", {
@@ -42,7 +42,7 @@ export const LogoTipoText = styled("span", {
   fontFamily: '"IBM Plex Sans"',
   "@mobile": {
     fontSize: "1rem",
-  }
+  },
 });
 
 export const NavbarLinks = styled(Flex, {
@@ -62,6 +62,6 @@ export const NavbarLinks = styled(Flex, {
 });
 
 export const NavbarMobileArea = styled("div", {
-   display: "flex",
-   justifyContent: "space-between"
+  display: "flex",
+  justifyContent: "space-between",
 });
