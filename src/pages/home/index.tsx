@@ -1,5 +1,8 @@
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Flickity from "react-flickity-component";
+import "flickity/css/flickity.css";
+
 // Styles
 import { Container } from "@/styles/Global";
 import { Text } from "@/styles/Text";
@@ -25,8 +28,12 @@ import {
   ProjectsAreaContent,
   ProjectAreaWrapperColumns,
 } from "./style";
+import { projectsData } from "@/utils/projectData";
 
 export const Home = (): JSX.Element => {
+  const flickityOptions = {
+    initialIndex: 2,
+  };
   Aos.init({
     offset: 120,
     delay: 0,
@@ -103,31 +110,38 @@ export const Home = (): JSX.Element => {
         </Container>
       </StackSection>
       <ProjectsArea id="projetos">
-        <Container>
+        <Text
+          style={{ textAlign: "center" }}
+          as="h4"
+          type="heading1"
+          color="grey1"
+        >
+          Projetos
+        </Text>
+        <Container style={{ maxWidth: "none" }}>
           <ProjectAreaWrapperColumns>
-            <ProjectsAreaSocialMediaMessage>
-              <Text as="h2" type="heading4" color="grey1">
-                Vamos trocar uma ideia?
-              </Text>
-              <Text as="p" type="body1" color="grey2">
-                No linkedIn sempre estou compartilhando meus processos diários
-                para desenvolver esses projetos e estou disposto a trocar
-                algumas ideias por lá
-              </Text>
-              <Button
-                type="primary"
-                target="_blank"
-                as="a"
-                href={`https://www.linkedin.com/in/${userData.linkedinUser}`}
-              >
-                Acessar perfil no LinkedIn
-              </Button>
-            </ProjectsAreaSocialMediaMessage>
             <ProjectsAreaContent>
-              <Text as="h3" type="heading2" color="grey1">
-                Projetos 
-              </Text>
-              <Project />
+              <Flickity options={{ draggable: false, wrapAround: true }}>
+                {projectsData.map((project) => {
+                  return (
+                    <a href={project.url} key={project.id} target="_blank">
+                      <Text
+                        style={{ textAlign: "center" }}
+                        as="h4"
+                        type="heading2"
+                        color="grey2"
+                      >
+                        {project.name}
+                      </Text>
+                      <img
+                        style={{ width: "100%", height: "100%" }}
+                        src={project.image}
+                        alt={project.name}
+                      />
+                    </a>
+                  );
+                })}
+              </Flickity>
             </ProjectsAreaContent>
           </ProjectAreaWrapperColumns>
         </Container>

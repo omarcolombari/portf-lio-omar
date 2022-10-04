@@ -74,7 +74,6 @@ export const ProjectsAreaSocialMediaMessage = styled("aside", {
 
 export const ProjectsAreaContent = styled("div", {
   width: "60%",
-  paddingLeft: "4rem",
   "@mobile": {
     width: "100%",
     paddingLeft: "0",
@@ -83,7 +82,8 @@ export const ProjectsAreaContent = styled("div", {
 
 export const ProjectAreaWrapperColumns = styled(Flex, {
   position: "relative",
-  alignItems: "flex-start",
+  alignItems: "center",
+  justifyContent: "center",
   "@mobile": {
     flexDirection: "column",
   },

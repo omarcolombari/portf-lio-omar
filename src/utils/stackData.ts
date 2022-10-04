@@ -25,7 +25,7 @@ import {
   imgTrello,
   imgJira,
   imgVite,
-} from "@/public/static/img/stack";
+} from "../assets/stack";
 
 export const stackData = [
   {
